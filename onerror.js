@@ -44,6 +44,7 @@ if (window.hasOwnProperty("onerror")) {
             }
 
             var error = {};
+            error["date"] = new Date().toISOString();
             error["data"] = data;
             error["url"] = window.location.href;
             error["userAgent"] = navigator.userAgent;
