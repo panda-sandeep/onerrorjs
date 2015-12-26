@@ -38,6 +38,8 @@
         xhr.open('POST', javaUrl);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onerror = function () {
+            console.info("Error Failed To Submit, retrying ...");
+            console.log(error);
             jvaas.resubmitError(error);
         };
         xhr.onload = function () {
