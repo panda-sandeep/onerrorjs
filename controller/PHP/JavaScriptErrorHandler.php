@@ -1,0 +1,6 @@
+<?php
+	// log errors here
+
+
+
+?>
