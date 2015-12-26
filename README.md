@@ -11,6 +11,6 @@ Followed by implementing `jvaas.submitError`:
       // do HTTP POST here
     }
 
-You can use `xhr.send`, `$.POST` or whatever floats your boat.
+You can use `xhr.send`, `$.POST` or whatever floats your boat, see the sample implementation in test.html
 
 If the error submit fails, you can call `jvaas.resubmitError(error);` which will retry the submit.
