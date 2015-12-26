@@ -17,31 +17,16 @@ if (window.hasOwnProperty("onerror")) {
             // uncomment to test the try-catch handler
             //invalidFunctionThatWillCauseError();
 
+            // only add params to array if they are present
             var data = [];
-            if (a) {
-                data.push(a);
-            }
-            if (b) {
-                data.push(b);
-            }
-            if (c) {
-                data.push(c);
-            }
-            if (d) {
-                data.push(d);
-            }
-            if (e) {
-                data.push(e);
-            }
-            if (f) {
-                data.push(f);
-            }
-            if (g) {
-                data.push(g);
-            }
-            if (h) {
-                data.push(h);
-            }
+            a && data.push(a);
+            b && data.push(b);
+            c && data.push(c);
+            d && data.push(d);
+            e && data.push(e);
+            f && data.push(f);
+            g && data.push(g);
+            h && data.push(h);
 
             var error = {};
             error["date"] = new Date().toISOString();
