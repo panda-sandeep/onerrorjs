@@ -1,15 +1,47 @@
 <html>
 	<head>
-		<script type="text/javascript src=onerror.js">
+        <title>Test window.onerror</title>
+		<script type="text/javascript" src="onerror.js"> </script>
 	</head>
 	<body>
-		
+
+        <button type="button" onclick="substringNullPointer()">
+            Substring Nullpointer
+        </button>
+
+        <button type="button" onclick="callInvalidFunction()">
+            Call Invalid Function
+        </button>
+
+        <!-- More Error Testing Buttons Here -->
+
+        <script type="text/javascript">
+
+            // function that causes null pointer exception
+            function substringNullPointer(){
+                var a = null;
+                var b = a.substr(3);
+            }
+
+            // implement submit error
+            jvaas.submitError = function(error){
+
+                console.log("Attempting to submit error ...");
+                console.info(error);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'http://localhost');
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        console.info("Error Submitted");
+                    } else {
+                        jvaas.resubmitError(error);
+                    }
+                };
+                xhr.send(JSON.stringify(error));
+            }
+
+        </script>
 	</body>
-
-
-
-
-
-
-
 </html>
