@@ -26,8 +26,8 @@
     // implement submit error
     jvaas.submitError = function (error) {
 
-        console.log("Attempting to submit error ...");
-        console.info(error);
+        //console.log("Attempting to submit error ...");
+        //console.info(error);
 
         // different error handler urls
         var javaUrl = "http://localhost:8080/error";
@@ -38,14 +38,15 @@
         xhr.open('POST', javaUrl);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onerror = function () {
-            jvaas.resubmitError(error)
+            jvaas.resubmitError(error);
         };
         xhr.onload = function () {
-            console.info("Error Submitted")
+            console.info("Error Submitted");
+            console.log(error);
         };
         xhr.send(JSON.stringify(error));
 
-    }
+    };
 
 </script>
 </body>
